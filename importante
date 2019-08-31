@@ -1,0 +1,18 @@
+carro.adicionarPessoas = function (numPessoas) {
+
+var totalPessoas = carro.quantidadePessoas + numPessoas;
+
+if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) { 
+return 'O carro já está lotado!';}
+
+if ( totalPessoas > carro.assentos ) { 
+
+var quantasFaltam = carro.assentos - carro.quantidadePessoas;
+var pluralOuSingular = quantasFaltam === 1 ? 'pessoa' : 'pessoas';
+
+return 'Só cabem mais ' + quantasFaltam +' '+ pluralOuSingular + '!';} 
+
+carro.quantidadePessoas += numPessoas;
+
+return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+};
